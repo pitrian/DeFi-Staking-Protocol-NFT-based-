@@ -1,0 +1,23 @@
+{
+  "name": "nft-term-deposit-protocol",
+  "version": "1.0.0",
+  "description": "DeFi NFT-Powered Term Deposit Protocol",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:coverage": "hardhat coverage",
+    "deploy": "hardhat run scripts/deploy.js --network localhost",
+    "node": "hardhat node",
+    "clean": "hardhat clean"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "^4.9.5",
+    "hardhat": "^2.19.4",
+    "solidity-coverage": "^0.8.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}

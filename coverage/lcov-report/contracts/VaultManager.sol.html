@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/VaultManager.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> VaultManager.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>26/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">67.39% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>31/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>9/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>31/31</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line high'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">73×</span>
+<span class="cline-any cline-yes">73×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">73×</span>
+<span class="cline-any cline-yes">73×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">73×</span>
+<span class="cline-any cline-yes">73×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59×</span>
+<span class="cline-any cline-yes">59×</span>
+<span class="cline-any cline-yes">59×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">66×</span>
+<span class="cline-any cline-yes">65×</span>
+<span class="cline-any cline-yes">65×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-yes">20×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-yes">18×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-yes">26×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+&nbsp;
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/security/Pausable.sol";
+import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+&nbsp;
+contract VaultManager is AccessControl, Pausable, ReentrancyGuard {
+    using SafeERC20 for IERC20;
+&nbsp;
+    bytes32 public constant VAULT_MANAGER_ROLE = keccak256("VAULT_MANAGER_ROLE");
+    bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
+&nbsp;
+    IERC20 public immutable usdc;
+    address public feeReceiver;
+    uint256 public totalInterestWithdrawn;
+&nbsp;
+    event VaultFunded(address indexed funder, uint256 amount);
+    event VaultWithdrawn(address indexed recipient, uint256 amount);
+    event InterestPaid(address indexed recipient, uint256 amount);
+    event FeeReceiverSet(address indexed newFeeReceiver);
+    event VaultManagerRoleGranted(address indexed manager);
+&nbsp;
+    constructor(address _usdc, address _admin, address _feeReceiver) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_usdc != address(0), "Invalid USDC address");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_admin != address(0), "Invalid admin address");
+&nbsp;
+        usdc = IERC20(_usdc);
+        feeReceiver = _feeReceiver;
+&nbsp;
+        _grantRole(DEFAULT_ADMIN_ROLE, _admin);
+        _grantRole(PAUSER_ROLE, _admin);
+    }
+&nbsp;
+    function setFeeReceiver(address _feeReceiver) external <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(DEFAULT_ADMIN_ROLE) {
+        require(_feeReceiver != address(0), "Invalid fee receiver");
+        feeReceiver = _feeReceiver;
+        emit FeeReceiverSet(_feeReceiver);
+    }
+&nbsp;
+    function grantVaultManagerRole(address _manager) external <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(DEFAULT_ADMIN_ROLE) {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(_manager != address(0), "Invalid manager");
+        _grantRole(VAULT_MANAGER_ROLE, _manager);
+        emit VaultManagerRoleGranted(_manager);
+    }
+&nbsp;
+    function fundVault(uint256 amount) external <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(DEFAULT_ADMIN_ROLE) whenNotPaused {
+        require(amount &gt; 0, "Amount must be &gt; 0");
+        usdc.safeTransferFrom(msg.sender, address(this), amount);
+        emit VaultFunded(msg.sender, amount);
+    }
+&nbsp;
+    function withdrawVault(uint256 amount) external <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(DEFAULT_ADMIN_ROLE) whenNotPaused <span class="missing-if-branch" title="else path not taken" >E</span>nonReentrant {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(amount &gt; 0, "Amount must be &gt; 0");
+        uint256 available = availableBalance();
+        require(available &gt;= amount, "Insufficient available balance");
+&nbsp;
+        totalInterestWithdrawn += amount;
+        usdc.safeTransfer(msg.sender, amount);
+        emit VaultWithdrawn(msg.sender, amount);
+    }
+&nbsp;
+    function withdrawInterest(uint256 amount, address recipient) external onlyRole(VAULT_MANAGER_ROLE) <span class="missing-if-branch" title="else path not taken" >E</span>whenNotPaused <span class="missing-if-branch" title="else path not taken" >E</span>nonReentrant {
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(amount &gt; 0, "Amount must be &gt; 0");
+        <span class="missing-if-branch" title="else path not taken" >E</span>require(recipient != address(0), "Invalid recipient");
+        require(availableBalance() &gt;= amount, "Insufficient vault balance for interest");
+&nbsp;
+        totalInterestWithdrawn += amount;
+        usdc.safeTransfer(recipient, amount);
+        emit InterestPaid(recipient, amount);
+    }
+&nbsp;
+    function availableBalance() public view returns (uint256) {
+        uint256 balance = usdc.balanceOf(address(this));
+        return balance &gt;= totalInterestWithdrawn ? balance - totalInterestWithdrawn : 0;
+    }
+&nbsp;
+    function pause() external <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(PAUSER_ROLE) {
+        _pause();
+    }
+&nbsp;
+    function unpause() external <span class="missing-if-branch" title="else path not taken" >E</span>onlyRole(PAUSER_ROLE) {
+        _unpause();
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon May 04 2026 08:20:04 GMT+0700 (Indochina Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
